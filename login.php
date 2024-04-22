@@ -1,9 +1,9 @@
 <?php
 // Base de datos
 $servername = "localhost";
-$username = "nombre_usuario";
-$password = "contraseña";
-$dbname = "nombre_base_de_datos";
+$username = "root";
+$password = "";
+$dbname = "usuario";
 
 // Conectamos
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,7 +18,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Consulta SQL para verificar las credenciales
-$sql = "SELECT * FROM user WHERE username=? AND password=?";
+$sql = "SELECT * FROM usuarios WHERE username=? AND password=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $username, $password);
 $stmt->execute();
