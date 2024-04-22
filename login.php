@@ -1,9 +1,9 @@
 <?php
 // Base de datos
 $servername = "localhost";
-$username = "nombre_usuario";
-$password = "contraseña";
-$dbname = "nombre_base_de_datos";
+$username = "root";
+$password = "";
+$dbname = "project_store";
 
 // Conectamos
 $conn = new mysqli($servername, $username, $password, $dbname);
