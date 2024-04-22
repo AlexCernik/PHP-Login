@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-04-2024 a las 05:05:42
+-- Tiempo de generación: 22-04-2024 a las 20:22:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -29,6 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
+  `username` varchar(16) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `name` text NOT NULL,
   `last_name` text NOT NULL,
   `dni` int(8) NOT NULL,
