@@ -16,15 +16,16 @@ if ($conn->connect_error) {
 // Obtenemos los datos del formulario
 $username = $_POST['username'];
 $password = $_POST['password'];
+$email = $_POST['email'];
 $name = $_POST['name'];
 $last_name = $_POST['last_name'];
 $dni = $_POST['dni'];
 $rol = $_POST['rol'];
 
 // Consulta SQL para insertar los datos en la base de datos
-$sql = "INSERT INTO user (username, password, name, last_name, dni, rol) VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO user (username, password, email, name, last_name, dni, rol) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssis", $username, $password, $name, $last_name, $dni, $rol);
+$stmt->bind_param("sssssis", $username, $password, $email, $name, $last_name, $dni, $rol);
 $result = $stmt->execute();
 
 // Verificamos si la inserción fue exitosa
